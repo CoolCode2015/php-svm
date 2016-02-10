@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>svm</name>
+ <channel>pecl.php.net</channel>
+ <summary>Support Vector Machine Library</summary>
+ <description>LibSVM is an efficient solver for SVM classification and regression problems. The svm extension wraps this in a PHP interface for easy use in PHP scripts. 
+ </description>
+ <lead>
+  <name>Ian Barber</name>
+  <user>ianb</user>
+  <email>ian.barber@gmail.co.uk</email>
+  <active>yes</active>
+ </lead>
+ <date>2013-04-02</date>
+ <time>20:00:00</time>
+ <version>
+  <release>0.1.10</release>
+  <api>0.1.5</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP</license>
+ <notes>
+	- Verified works with 3.14
+	- Fixed option return format
+	- Removed unused variable
+ </notes>
+ <contents>
+   <dir name="/">
+      <!-- Support files -->
+      <file name="config.m4" role="src" />
+
+      <!-- Headers -->
+      <file name="php_svm.h" role="src">
+       <tasks:replace from="@PACKAGE_VERSION@" to="version" type="package-info" />
+      </file>
+      <file name="php_svm_internal.h" role="src" />
+
+      <!-- Source files -->
+      <file name="svm.c" role="src" />
+
+      <!-- Misc files -->
+      <file name="README" role="doc" />
+      <file name="CREDITS" role="doc" />
+      <file name="LICENSE" role="doc" />
+      
+      <!-- Tests -->
+      <dir name="tests">
+        <file name="001_train.phpt" role="test" />
+        <file name="002_predict.phpt" role="test" />
+        <file name="003_getparms.phpt" role="test" />
+        <file name="004_setoptions.phpt" role="test" />
+        <file name="005_regression.phpt" role="test" />
+        <file name="006_train_array.phpt" role="test" />
+        <file name="007_kernels.phpt" role="test" />
+        <file name="008_cross_validate.phpt" role="test" />
+        <file name="009_badfile.phpt" role="test" />
+        <file name="010_weights.phpt" role="test" />
+        <file name="011_inttodouble.phpt" role="test" />
+        <file name="012_baddata.phpt" role="test" />
+        <file name="013_boolean_options.phpt" role="test" />
+        <file name="014_predict_probability.phpt" role="test" />
+        <file name="015_info_methods.phpt" role="test" />
+        <file name="016_file_stream.phpt" role="test" />
+        <file name="abalone.scale" role="test" />
+        <file name="australian.scale" role="test" />
+        <file name="baddata.scale" role="test" />
+      </dir>
+     </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <providesextension>svm</providesextension>
+ <extsrcrelease />
+</package>
